@@ -82,9 +82,9 @@ export function app(): express.Express {
           description:
             'Talk face-to-face with car sales people locally or worldwide and view cars before going to the car lot Receive car data via chat or by email.',
           image:
-            'https://video.healing.tube/assets/banner/Healing-Tube-Logo.jpg',
-          site: 'https://video.healing.tube/',
-          url: 'https://video.healing.tube' + params,
+            'https://video.wheels.tube/assets/wheels-logo-min.png',
+          site: 'https://video.wheels.tube/',
+          url: 'https://video.wheels.tube' + params,
           keywords: 'Wheels Tube',
         };
         if (
@@ -126,9 +126,9 @@ export function app(): express.Express {
           const pdhtml = document.createElement('div');
           pdhtml.innerHTML = post?.postdescription || post?.metadescription;
           const talent = {
-            name: post?.title || post?.albumname || 'Healing.Tube Post',
+            name: post?.title || post?.albumname || 'Wheels.Tube Post',
             description: pdhtml?.textContent || 'Post content',
-            image: post?.thumbfilename || post?.metaimage || post?.imageUrl,
+            image: post?.thumbfilename || post?.metaimage || post?.imageUrl || 'https://video.wheels.tube/assets/wheels-logo-min.png',
           };
           seo.title = talent.name;
           seo.description = strip_html_tags(talent.description);
