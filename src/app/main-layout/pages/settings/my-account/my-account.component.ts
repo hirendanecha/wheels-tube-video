@@ -27,16 +27,15 @@ export class MyAccountComponent {
     private commonService: CommonService,
     private spinner: NgxSpinnerService,
     public shareService: ShareService,
-    private authService:AuthService
+    private authService:AuthService,
   ) {
     this.channelId = +localStorage.getItem('channelId');
     this.userData = JSON.parse(localStorage.getItem('authUser'));
   }
 
   ngOnInit(): void {
-    this.getChannels();
     this.getPostVideosById();
-    this.getChannelByUserId();
+    this.getChannelByUserId()
   }
 
   getPostVideosById(): void {
@@ -106,7 +105,7 @@ export class MyAccountComponent {
     });
   }
   getChannels(): void {
-    const userId = JSON.parse(this.authService.getUserData() as any)?.UserID;
+    const userId = JSON.parse(this.authService.getUserData() as any)?.Id;
     const apiUrl = `${environment.apiUrl}channels/get-channels/${userId}`;
     this.commonService.get(apiUrl).subscribe({
       next: (res) => {
