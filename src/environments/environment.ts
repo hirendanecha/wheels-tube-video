@@ -18,7 +18,7 @@ export const environment = {
   domain: '.wheels.tube',
   wasabiUrl: wasabiUrl,
   socketUrl: `${backendUrl}`,
-  conferenceUrl: 'https://facetime.tube/',
+  conferenceUrl: 'https://meet.facetime.tube/',
   logoutUrl: logoutUrl
 
 };
